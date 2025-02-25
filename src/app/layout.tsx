@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
-import Navbar from "../../components/navbar";
+import { Inter } from "next/font/google"
+
 import "./globals.css";
+
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: "dohyun's portfolio",
@@ -13,9 +19,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko">
+    <html lang="ko" className={inter.className}>
       <body className="antialiased">
-        <Navbar />
         {children}
       </body>
     </html>

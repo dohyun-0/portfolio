@@ -9,7 +9,7 @@ import Server2 from "../../public/server2.png";
 
 export default function Home() {
   return (
-    <main className="h-full 1200:h-[93vh]">
+    <main className="h-full 1200:h-screen">
       <div className="w-full h-full p-10 1200:p-0 flex justify-center items-center">
         <article className="max-w-6xl grid grid-cols-1 1200:grid-cols-2 gap-3 516:gap-10 gap-x-14">
           <section className="flex flex-col items-center">
