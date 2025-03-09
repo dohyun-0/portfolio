@@ -170,13 +170,13 @@ export default function Page() {
                   <div className="flex gap-2 sm:gap-5 z-99">
                     <Link
                       className="px-2 py-1 sm:px-4 sm:py-2 border text-sm sm:text-base duration-150 hover:bg-white/90 hover:text-black"
-                      href="/"
+                      href="https://discord.com/users/912950179055935489"
                     >
                       Discord
                     </Link>
                     <Link
                       className="px-2 py-1 sm:px-4 sm:py-2 border text-sm sm:text-base duration-150 hover:bg-white/90 hover:text-black"
-                      href="/"
+                      href="https://github.com/dohyun-0"
                     >
                       Github
                     </Link>
@@ -323,7 +323,7 @@ export default function Page() {
                 Server
               </div>
               <div className="p-5 grid grid-cols-1 lg:grid-cols-2 gap-5">
-                <Link href="/" className="z-99">
+                <Link href="https://discord.gg/AxQmXA4hDW" className="z-99">
                   <Card className="w-full p-5 flex flex-col [@media(min-width:441px)]:flex-row gap-5 duration-150 hover:scale-102">
                     <Image
                       src={Server1}
@@ -342,7 +342,7 @@ export default function Page() {
                     <Arrows />
                   </Card>
                 </Link>
-                <Link href="/" className="z-99">
+                <Link href="https://discord.gg/soribot" className="z-99">
                   <Card className="w-full p-5 flex flex-col [@media(min-width:441px)]:flex-row gap-5 duration-150 hover:scale-102">
                     <Image
                       src={Server2}
