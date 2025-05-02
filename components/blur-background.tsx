@@ -9,5 +9,5 @@ export function BlurBackground() {
       {/* 검은색 블러 레이어 (흰색 요소 위에 위치) */}
       <div className="fixed inset-0 bg-black/70 backdrop-blur-3xl -z-5" />
     </div>
-  )
+  );
 }

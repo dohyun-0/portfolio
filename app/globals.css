@@ -1,6 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", "Inter Fallback";
+}
 
 @layer base {
   :root {
@@ -58,32 +68,6 @@
   }
 }
 
-@font-face {
-  font-family: "Paperlogy-4Regular";
-  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2")
-    format("woff2");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Paperlogy-9Black";
-  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-9Black.woff2")
-    format("woff2");
-  font-weight: 900;
-  font-style: normal;
-}
-
-@layer base {
-  .font-paper9 {
-    font-family: "Paperlogy-9Black", sans-serif;
-  }
-  
-  .font-paper4 {
-    font-family: "Paperlogy-4Regular", sans-serif;
-  }
-}
-
 /* 스크롤바 스타일링 */
 ::-webkit-scrollbar {
   width: 10px;
@@ -113,7 +97,6 @@
 /* Edge 및 IE 스크롤바 스타일링 */
 body {
   -ms-overflow-style: none;
-  font-family: "Paperlogy-4Regular", sans-serif;
 }
 
 /* 모바일 기기에서는 기본 스크롤바 사용 */

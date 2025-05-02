@@ -1,93 +1,47 @@
 "use client";
 
-import { Github, Instagram, CameraIcon, Search, BarChart3 } from "lucide-react";
+import {
+  Github,
+  Instagram,
+  Camera,
+  Search,
+  UiChecks,
+} from "react-bootstrap-icons";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { BlurBackground } from "@/components/blur-background";
 import Image from "next/image";
+import {
+  AnimatedCard,
+  AnimatedSection,
+  AnimatedTitle,
+} from "@/components/animated-section";
 
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col text-white relative">
       <BlurBackground />
 
-      {/* 헤더 */}
       <header className="sticky top-0 z-10 border-b border-zinc-800/50 bg-black/40 backdrop-blur-md">
         <div className="container flex h-14 items-center">
-          <div className="mr-4 hidden md:flex">
-            <a
-              className="mr-6 flex items-center space-x-2 font-bold cursor-pointer"
-              onClick={(e) => {
-                e.preventDefault();
-                const aboutSection = document.querySelector("#home");
-                if (aboutSection) {
-                  aboutSection.scrollIntoView({ behavior: "smooth" });
-                }
-              }}
-            >
-              <span>Yuchan's Portfolio</span>
+          <div className="mr-4 flex w-full justify-between">
+            <a className="mr-6 flex items-center space-x-2 font-black" href="/">
+              <span>yuchan's portfolio</span>
             </a>
-            <nav className="flex items-center space-x-6 text-sm font-medium">
+            <nav className="flex items-center space-x-6 text-sm">
               <a
-                className="transition-colors hover:text-zinc-400 cursor-pointer"
-                onClick={(e) => {
-                  e.preventDefault();
-                  const aboutSection = document.querySelector("#about");
-                  if (aboutSection) {
-                    aboutSection.scrollIntoView({ behavior: "smooth" });
-                  }
-                }}
+                className="transition-colors hover:text-zinc-400"
+                href="#about"
               >
                 About
               </a>
               <a
-                className="transition-colors hover:text-zinc-400 cursor-pointer"
-                onClick={(e) => {
-                  e.preventDefault();
-                  const aboutSection = document.querySelector("#projects");
-                  if (aboutSection) {
-                    aboutSection.scrollIntoView({ behavior: "smooth" });
-                  }
-                }}
+                className="transition-colors hover:text-zinc-400"
+                href="#projects"
               >
-                Project
+                Projects
               </a>
-              <a
-                className="transition-colors hover:text-zinc-400 cursor-pointer"
-                onClick={(e) => {
-                  e.preventDefault();
-                  const aboutSection = document.querySelector("#contact");
-                  if (aboutSection) {
-                    aboutSection.scrollIntoView({ behavior: "smooth" });
-                  }
-                }}
-              >
-                Contact
-              </a>
-            </nav>
-          </div>
-          <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
-            <nav className="flex items-center md:hidden">
-              <Button variant="ghost" size="icon" className="mr-2">
-                <span className="sr-only">메뉴</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="h-6 w-6"
-                >
-                  <line x1="4" x2="20" y1="12" y2="12" />
-                  <line x1="4" x2="20" y1="6" y2="6" />
-                  <line x1="4" x2="20" y1="18" y2="18" />
-                </svg>
-              </Button>
             </nav>
           </div>
         </div>
@@ -95,46 +49,63 @@ export default function Home() {
 
       <main className="flex-1">
         {/* 히어로 섹션 */}
-        <section id="home" className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
+        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
           <div className="container px-4 md:px-6 relative z-1">
-            <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
-              <div className="flex flex-col justify-center space-y-4">
-                <div className="space-y-2">
-                  <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-white font-paper9">
+            <div className="flex flex-col-reverse lg:flex-row items-center gap-8 lg:justify-between">
+              <AnimatedSection className="flex flex-col justify-center space-y-4">
+                <div className="flex flex-col items-center lg:items-start space-y-2">
+                  <h1
+                    className="text-3xl font-black tracking-tighter sm:text-5xl lg:text-6xl/none"
+                    style={{
+                      background: "linear-gradient(180deg, #ffffff, #adadad)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                    }}
+                  >
                     Yuchan Park
                   </h1>
                   <p className="text-xl text-zinc-300">
-                    Web Developer & <br />
-                    Student Developer
+                    Student & Web Developer
                   </p>
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
                   <Button
-                    className="bg-white text-black hover:bg-zinc-200 inline-flex h-10 items-center justify-center rounded-md px-8 text-sm font-medium shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-zinc-700 disabled:pointer-events-none disabled:opacity-50"
-                    onClick={() => {
-                      const aboutSection = document.querySelector("#about");
-                      if (aboutSection) {
-                        aboutSection.scrollIntoView({ behavior: "smooth" });
-                      }
-                    }}
+                    variant="default"
+                    size="lg"
+                    className="bg-white hover:bg-white/80 text-black"
+                    onClick={() =>
+                      window.open("https://github.com/dohyun-0", "_blank")
+                    }
                   >
-                    See More
+                    <Github className="mr-1" />
+                    GitHub
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="border-white text-white hover:bg-white hover:text-black"
+                    onClick={() =>
+                      window.open("https://instagram.conm/yu.ch_09", "_blank")
+                    }
+                  >
+                    <Instagram className="mr-1" />
+                    Instagram
                   </Button>
                 </div>
-              </div>
-              <div className="flex justify-center">
+              </AnimatedSection>
+              <AnimatedSection delay={0.2} className="flex justify-center">
                 <Image
                   alt="프로필 이미지"
-                  className="rounded-full object-cover border border-zinc-800/50"
-                  height="400"
-                  width="400"
-                  src="./profile.png"
+                  className="w-[200px] sm:w-[300px] rounded-full object-cover border border-zinc-800/50"
+                  height="300"
+                  width="300"
+                  src="/profile.png"
                   style={{
                     aspectRatio: "400/400",
                     objectFit: "cover",
                   }}
                 />
-              </div>
+              </AnimatedSection>
             </div>
           </div>
         </section>
@@ -143,64 +114,109 @@ export default function Home() {
         <section id="about" className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6 relative z-1">
             <div className="flex flex-col items-center justify-center space-y-8">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center text-white">
-                About
-              </h2>
+              <AnimatedTitle className="text-center">
+                <h2 className="text-3xl font-black tracking-tighter sm:text-4xl lg:text-5xl">
+                  소개 및 기술
+                </h2>
+              </AnimatedTitle>
 
               <div className="grid gap-8 lg:grid-cols-2">
-                <div className="space-y-4 bg-zinc-900/30 backdrop-blur-sm p-6 rounded-lg border border-zinc-700/30">
-                  <h3 className="text-xl font-bold text-white">Introducing</h3>
+                <AnimatedCard
+                  delay={0.1}
+                  className="space-y-4 bg-zinc-900/30 backdrop-blur-sm p-6 rounded-lg border border-zinc-700/30"
+                >
+                  <h3 className="text-xl font-bold text-white">자기소개</h3>
                   <div className="space-y-4">
-                    <p className="text-zinc-300">
-                      안녕하세요, 개발이 취미인 학생 개발자 유찬이라고 합니다.
+                    <p className="text-zinc-300 break-keep">
+                      <strong>안녕하세요!</strong> 저는 개발을 취미로 삼고 있는
+                      고등학생 개발자 박유찬입니다.
                       <br />
-                      주로 React나 Next.js, Vue.js등을 이용해서 웹 개발을 하고
-                      있습니다.
+                      효율적이고 깔끔한 코드를 작성하는 데에 열정을 가지고
+                      있으며, 프로젝트를 기획하고 개발하여, 누군가에게 보여주는
+                      것을 좋아합니다. Vue.js, React, Next.js 등을 활용해
+                      프론트엔드 위주의 개발을 하고 있습니다.
+                    </p>
+                    <p className="text-zinc-300 break-keep">
+                      현재 명진고등학교에 재학 중이며, 방송부에서 활동을 하고
+                      있습니다. <br />
+                      개발뿐만 아니라{" "}
+                      <strong>시스템 장비, 영상 편집, 드론 등</strong> 여러
+                      분야에도 관심을 가지고 있습니다.
+                    </p>
+                    <p className="text-zinc-300 break-keep">
+                      저만의 속도로 꾸준히 배우고, 만들고, 도전하고 있습니다.
                       <br />
-                      현재 명진고등학교에서 재학 중이며 방송부로 활동 하고
-                      있습니다.
+                      앞으로도 새로운 기술과 아이디어에 도전하면서, 더 나은
+                      개발자가 되기 위해 계속 노력하겠습니다.
                     </p>
                   </div>
-                </div>
+                </AnimatedCard>
 
-                <div className="space-y-4 bg-zinc-900/30 backdrop-blur-sm p-6 rounded-lg border border-zinc-700/30">
-                  <h3 className="text-xl font-bold text-white">Skill Stacks</h3>
-                  <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
-                    <Badge className="px-3 py-1.5 bg-[#e34f263f] text-white hover:bg-[#d8431c6f] border-[#e34f26]/50">
-                      HTML
-                    </Badge>
-                    <Badge className="px-3 py-1.5 bg-[#1572b63f] text-white hover:bg-[#1261a06f] border-[#1572b6]/50">
-                      CSS
-                    </Badge>
-                    <Badge className="px-3 py-1.5 bg-[#3178c63f] text-white hover:bg-[#2565b46f] border-[#3178c6]/50">
-                      TypeScript
-                    </Badge>
-                    <Badge className="px-3 py-1.5 bg-[#f7df1e3f] text-white hover:bg-[#e6cf1b6f] border-[#f7df1e]/50">
-                      JavaScript
-                    </Badge>
-                    <Badge className="px-3 py-1.5 bg-[#06b6d43f] text-white hover:bg-[#05a6c06f] border-[#06b6d4]/50">
-                      Tailwind CSS
-                    </Badge>
-                    <Badge className="px-3 py-1.5 bg-[#61dafb3f] text-white hover:bg-[#52c0e06f] border-[#61dafb]/50">
-                      React
-                    </Badge>
-                    <Badge className="px-3 py-1.5 bg-[#0000003f] text-white hover:bg-[#1a1a1a6f] border-[#000000]/50">
-                      Next.js
-                    </Badge>
-                    <Badge className="px-3 py-1.5 bg-[#47848f3f] text-white hover:bg-[#3c737c6f] border-[#47848f]/50">
-                      Electron
-                    </Badge>
-                    <Badge className="px-3 py-1.5 bg-[#43853d3f] text-white hover:bg-[#386d336f] border-[#43853d]/50">
-                      Node.js
-                    </Badge>
-                    <Badge className="px-3 py-1.5 bg-[#3776ab3f] text-white hover:bg-[#2f67966f] border-[#3776ab]/50">
-                      Python
-                    </Badge>
-                    <Badge className="px-3 py-1.5 bg-[#47a2483f] text-white hover:bg-[#3d8f3e6f] border-[#47a248]/50">
-                      MongoDB
-                    </Badge>
+                <AnimatedCard
+                  delay={0.2}
+                  className="space-y-4 bg-zinc-900/30 backdrop-blur-sm p-6 rounded-lg border border-zinc-700/30"
+                >
+                  <h3 className="text-xl font-bold text-white">기술 스택</h3>
+
+                  <div className="space-y-6">
+                    <div>
+                      <h4 className="text-lg font-semibold text-white mb-2">
+                        Frontend
+                      </h4>
+                      <div className="flex flex-wrap gap-2">
+                        <Badge className="px-3 py-1.5 bg-zinc-800/70 text-white hover:bg-zinc-700/70 border-zinc-700/50">
+                          React
+                        </Badge>
+                        <Badge className="px-3 py-1.5 bg-zinc-800/70 text-white hover:bg-zinc-700/70 border-zinc-700/50">
+                          Next.js
+                        </Badge>
+                        <Badge className="px-3 py-1.5 bg-zinc-800/70 text-white hover:bg-zinc-700/70 border-zinc-700/50">
+                          Vue.js
+                        </Badge>
+                        <Badge className="px-3 py-1.5 bg-zinc-800/70 text-white hover:bg-zinc-700/70 border-zinc-700/50">
+                          TypeScript
+                        </Badge>
+                        <Badge className="px-3 py-1.5 bg-zinc-800/70 text-white hover:bg-zinc-700/70 border-zinc-700/50">
+                          Tailwind CSS
+                        </Badge>
+                      </div>
+                    </div>
+                    <hr />
+                    <div>
+                      <h4 className="text-lg font-semibold text-white mb-2">
+                        Database
+                      </h4>
+                      <div className="flex flex-wrap gap-2">
+                        <Badge className="px-3 py-1.5 bg-zinc-800/70 text-white hover:bg-zinc-700/70 border-zinc-700/50">
+                          MongoDB
+                        </Badge>
+                        <Badge className="px-3 py-1.5 bg-zinc-800/70 text-white hover:bg-zinc-700/70 border-zinc-700/50">
+                          SQLite
+                        </Badge>
+                      </div>
+                    </div>
+                    <hr />
+                    <div>
+                      <h4 className="text-lg font-semibold text-white mb-2">
+                        Tools & Others
+                      </h4>
+                      <div className="flex flex-wrap gap-2">
+                        <Badge className="px-3 py-1.5 bg-zinc-800/70 text-white hover:bg-zinc-700/70 border-zinc-700/50">
+                          Python
+                        </Badge>
+                        <Badge className="px-3 py-1.5 bg-zinc-800/70 text-white hover:bg-zinc-700/70 border-zinc-700/50">
+                          Electron
+                        </Badge>
+                        <Badge className="px-3 py-1.5 bg-zinc-800/70 text-white hover:bg-zinc-700/70 border-zinc-700/50">
+                          VSCode
+                        </Badge>
+                        <Badge className="px-3 py-1.5 bg-zinc-800/70 text-white hover:bg-zinc-700/70 border-zinc-700/50">
+                          Cursor
+                        </Badge>
+                      </div>
+                    </div>
                   </div>
-                </div>
+                </AnimatedCard>
               </div>
             </div>
           </div>
@@ -209,152 +225,128 @@ export default function Home() {
         {/* 프로젝트 섹션 */}
         <section id="projects" className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6 relative z-1">
-            <div className="flex flex-col items-center justify-center space-y-8 text-center">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-white">
-                Projects
-              </h2>
-              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                <Card className="bg-zinc-900/30 border-zinc-700/30 text-white backdrop-blur-sm">
-                  <CardContent className="p-6">
-                    <div className="flex justify-center items-center mb-6">
-                      <div className="w-24 h-24 rounded-full bg-zinc-800/70 flex items-center justify-center">
-                        <CameraIcon className="w-12 h-12 text-white" />
-                      </div>
-                    </div>
-                    <div className="space-y-2">
-                      <h3 className="text-xl font-bold">
-                        Life4Cuts (인생네컷)
-                      </h3>
-                      <p className="text-zinc-300">
-                        Vue.js와 Electron을 활용하여 외부 카메라를 통해
-                        인생네컷을 찍어서 사진을 저장할 수 있는 기능을
-                        구현했습니다.
-                      </p>
-                      <div className="flex flex-wrap gap-2 pt-2">
-                        <Badge
-                          variant="outline"
-                          className="border-zinc-700/50 text-zinc-300"
-                        >
-                          Vue.js
-                        </Badge>
-                        <Badge
-                          variant="outline"
-                          className="border-zinc-700/50 text-zinc-300"
-                        >
-                          CSS
-                        </Badge>
-                        <Badge
-                          variant="outline"
-                          className="border-zinc-700/50 text-zinc-300"
-                        >
-                          Typescript
-                        </Badge>
-                        <Badge
-                          variant="outline"
-                          className="border-zinc-700/50 text-zinc-300"
-                        >
-                          Electron
-                        </Badge>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-                <Card className="bg-zinc-900/30 border-zinc-700/30 text-white backdrop-blur-sm">
-                  <CardContent className="p-6">
-                    <div className="flex justify-center items-center mb-6">
-                      <div className="w-24 h-24 rounded-full bg-zinc-800/70 flex items-center justify-center">
-                        <Search className="w-12 h-12 text-white" />
-                      </div>
-                    </div>
-                    <div className="space-y-2">
-                      <h3 className="text-xl font-bold">
-                        Search Similar Image
-                      </h3>
-                      <p className="text-zinc-300">
-                        Python과 Selenium을 이용해서 구글 이미지 검색을 통해
-                        비슷한 이미지를 검색하는 기능을 구현했습니다.
-                        <br />
-                        (인증 문제로 개발 중단)
-                      </p>
-                      <div className="flex flex-wrap gap-2 pt-2">
-                        <Badge
-                          variant="outline"
-                          className="border-zinc-700/50 text-zinc-300"
-                        >
-                          Python
-                        </Badge>
-                        <Badge
-                          variant="outline"
-                          className="border-zinc-700/50 text-zinc-300"
-                        >
-                          Selenium
-                        </Badge>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-                <Card className="bg-zinc-900/30 border-zinc-700/30 text-white backdrop-blur-sm">
-                  <CardContent className="p-6">
-                    <div className="flex justify-center items-center mb-6">
-                      <div className="w-24 h-24 rounded-full bg-zinc-800/70 flex items-center justify-center">
-                        <BarChart3 className="w-12 h-12 text-white" />
-                      </div>
-                    </div>
-                    <div className="space-y-2">
-                      <h3 className="text-xl font-bold">
-                        대시보드 UI (Private Project)
-                      </h3>
-                      <p className="text-zinc-300">
-                        React와 TypeScript를 사용하여 개발한 관리자 대시보드
-                        UI입니다. 데이터 시각화, 사용자 관리, 설정 기능 등을
-                        구현했습니다.
-                      </p>
-                      <div className="flex flex-wrap gap-2 pt-2">
-                        <Badge
-                          variant="outline"
-                          className="border-zinc-700/50 text-zinc-300"
-                        >
-                          React
-                        </Badge>
-                        <Badge
-                          variant="outline"
-                          className="border-zinc-700/50 text-zinc-300"
-                        >
-                          Next.js
-                        </Badge>
-                        <Badge
-                          variant="outline"
-                          className="border-zinc-700/50 text-zinc-300"
-                        >
-                          Typescript
-                        </Badge>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* 연락처 섹션 */}
-        <section id="contact" className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6 relative z-1">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-white">
-                Contact
-              </h2>
-              <div className="mx-auto flex max-w-sm items-center gap-6 py-6 lg:max-w-4xl lg:grid-cols-3">
-                <div className="flex flex-col items-center space-y-2 rounded-lg border border-zinc-700/30 bg-zinc-900/30 p-6 backdrop-blur-sm">
-                  <Github className="h-12 w-12 text-white" />
-                  <h3 className="text-xl font-bold text-white">GitHub</h3>
-                  <p className="text-zinc-300">github.com/dohyun-0</p>
-                </div>
-                <div className="flex flex-col items-center space-y-2 rounded-lg border border-zinc-700/30 bg-zinc-900/30 p-6 backdrop-blur-sm">
-                  <Instagram className="h-12 w-12 text-white" />
-                  <h3 className="text-xl font-bold text-white">Instagram</h3>
-                  <p className="text-zinc-300">instagram.com/yu.ch_09</p>
-                </div>
+              <AnimatedTitle className="space-y-2">
+                <h2 className="text-3xl font-black tracking-tighter sm:text-4xl lg:text-5xl">
+                  프로젝트
+                </h2>
+              </AnimatedTitle>
+              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                <AnimatedCard delay={0.1}>
+                  <Card className="bg-zinc-900/30 border-zinc-700/30 text-white backdrop-blur-sm">
+                    <CardContent className="p-6">
+                      <div className="flex justify-center items-center mb-6">
+                        <div className="w-24 h-24 rounded-full bg-zinc-800/70 flex items-center justify-center">
+                          <Camera className="w-12 h-12 text-white" />
+                        </div>
+                      </div>
+                      <div className="space-y-2">
+                        <h3 className="text-xl font-bold">Life4Cuts</h3>
+                        <p className="text-zinc-300 break-keep">
+                          Vue.js와 Electron을 활용해 외부 카메라로 촬영한 사진을
+                          선택하여 프레임 디자인과 함께 콜라주 형태로 저장하는
+                          인생네컷 스타일의 포토부스 프로그램을 개발했습니다.
+                        </p>
+                        <div className="flex flex-wrap gap-2 pt-2">
+                          <Badge
+                            variant="outline"
+                            className="border-zinc-700/50 text-zinc-300"
+                          >
+                            Vue.js
+                          </Badge>
+                          <Badge
+                            variant="outline"
+                            className="border-zinc-700/50 text-zinc-300"
+                          >
+                            Electron
+                          </Badge>
+                          <Badge
+                            variant="outline"
+                            className="border-zinc-700/50 text-zinc-300"
+                          >
+                            Web API
+                          </Badge>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </AnimatedCard>
+                <AnimatedCard delay={0.2}>
+                  <Card className="bg-zinc-900/30 border-zinc-700/30 text-white backdrop-blur-sm">
+                    <CardContent className="p-6">
+                      <div className="flex justify-center items-center mb-6">
+                        <div className="w-24 h-24 rounded-full bg-zinc-800/70 flex items-center justify-center">
+                          <Search className="w-12 h-12 text-white" />
+                        </div>
+                      </div>
+                      <div className="space-y-2">
+                        <h3 className="text-xl font-bold">
+                          Search Similar Image
+                        </h3>
+                        <p className="text-zinc-300 break-keep">
+                          Python과 Selenium을 활용해 Bing 이미지 검색 자동화를
+                          구현하여 입력된 이미지와 유사한 이미지를 탐색하고
+                          저장하는 도구를 개발했습니다.
+                        </p>
+                        <div className="flex flex-wrap gap-2 pt-2">
+                          <Badge
+                            variant="outline"
+                            className="border-zinc-700/50 text-zinc-300"
+                          >
+                            Python
+                          </Badge>
+                          <Badge
+                            variant="outline"
+                            className="border-zinc-700/50 text-zinc-300"
+                          >
+                            Selenium
+                          </Badge>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </AnimatedCard>
+                <AnimatedCard delay={0.3}>
+                  <Card className="bg-zinc-900/30 border-zinc-700/30 text-white backdrop-blur-sm">
+                    <CardContent className="p-6">
+                      <div className="flex justify-center items-center mb-6">
+                        <div className="w-24 h-24 rounded-full bg-zinc-800/70 flex items-center justify-center">
+                          <UiChecks className="w-12 h-12 text-white" />
+                        </div>
+                      </div>
+                      <div className="space-y-2">
+                        <h3 className="text-xl font-bold">
+                          Dashboard UI (Private Projects)
+                        </h3>
+                        <p className="text-zinc-300 break-keep">
+                          Next.js와 TypeScript를 사용하여 Discord Bot의 대시보드
+                          UI를 통해 유저가 봇의 기능을 설정하고 서버에 맞게끔
+                          조절할 수 있는 개발했습니다.
+                        </p>
+                        <div className="flex flex-wrap gap-2 pt-2">
+                          <Badge
+                            variant="outline"
+                            className="border-zinc-700/50 text-zinc-300"
+                          >
+                            Next.js
+                          </Badge>
+                          <Badge
+                            variant="outline"
+                            className="border-zinc-700/50 text-zinc-300"
+                          >
+                            React
+                          </Badge>
+                          <Badge
+                            variant="outline"
+                            className="border-zinc-700/50 text-zinc-300"
+                          >
+                            TypeScript
+                          </Badge>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </AnimatedCard>
               </div>
             </div>
           </div>
@@ -364,7 +356,7 @@ export default function Home() {
       {/* 푸터 */}
       <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t border-zinc-800/50 bg-black/40 backdrop-blur-sm relative z-1">
         <p className="text-xs text-zinc-500">
-          © 2025 박유찬. All rights reserved.
+          © 2024 박유찬. All rights reserved.
         </p>
         <nav className="sm:ml-auto flex gap-4 sm:gap-6">
           <a
@@ -378,12 +370,6 @@ export default function Home() {
             href="#projects"
           >
             Projects
-          </a>
-          <a
-            className="text-xs hover:text-zinc-400 text-zinc-500"
-            href="#contact"
-          >
-            Contact
           </a>
         </nav>
       </footer>
