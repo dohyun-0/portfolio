@@ -85,7 +85,7 @@ export default function Home() {
                     size="lg"
                     className="border-white text-white hover:bg-white hover:text-black"
                     onClick={() =>
-                      window.open("https://instagram.conm/yu.ch_09", "_blank")
+                      window.open("https://instagram.com/yu.ch_09", "_blank")
                     }
                   >
                     <Instagram className="mr-1" />
