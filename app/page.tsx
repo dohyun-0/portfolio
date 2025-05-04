@@ -55,7 +55,7 @@ export default function Home() {
               <AnimatedSection className="flex flex-col justify-center space-y-4">
                 <div className="flex flex-col items-center lg:items-start space-y-2">
                   <h1
-                    className="text-3xl font-black tracking-tighter sm:text-5xl lg:text-6xl/none"
+                    className="text-3xl font-black tracking-tight sm:text-5xl lg:text-6xl"
                     style={{
                       background: "linear-gradient(180deg, #ffffff, #adadad)",
                       WebkitBackgroundClip: "text",
@@ -129,25 +129,26 @@ export default function Home() {
                   <div className="space-y-4">
                     <p className="text-zinc-300 break-keep">
                       <strong>안녕하세요!</strong> 저는 개발을 취미로 삼고 있는
-                      고등학생 개발자 박유찬입니다.
+                      고등학생 개발자 <strong>박유찬</strong>입니다.
                       <br />
                       효율적이고 깔끔한 코드를 작성하는 데에 열정을 가지고
                       있으며, 프로젝트를 기획하고 개발하여, 누군가에게 보여주는
-                      것을 좋아합니다. Vue.js, React, Next.js 등을 활용해
+                      것을 좋아합니다.
+                      <strong>Vue.js, React, Next.js</strong> 등을 활용해
                       프론트엔드 위주의 개발을 하고 있습니다.
                     </p>
                     <p className="text-zinc-300 break-keep">
-                      현재 명진고등학교에 재학 중이며, 방송부에서 활동을 하고
-                      있습니다. <br />
-                      개발뿐만 아니라{" "}
-                      <strong>시스템 장비, 영상 편집, 드론 등</strong> 여러
+                      현재 <strong>명진고등학교</strong>에 재학 중이며,{" "}
+                      <strong>방송부</strong>에서 활동하고 있습니다. <br />
+                      개발뿐만 아니라 시스템 장비, 영상 편집, 드론 등 여러
                       분야에도 관심을 가지고 있습니다.
                     </p>
                     <p className="text-zinc-300 break-keep">
                       저만의 속도로 꾸준히 배우고, 만들고, 도전하고 있습니다.
                       <br />
-                      앞으로도 새로운 기술과 아이디어에 도전하면서, 더 나은
-                      개발자가 되기 위해 계속 노력하겠습니다.
+                      앞으로도 <strong>새로운 기술과 아이디어</strong>에
+                      도전하면서, 더 나은 개발자가 되기 위해 계속
+                      노력하겠습니다.
                     </p>
                   </div>
                 </AnimatedCard>
@@ -164,19 +165,19 @@ export default function Home() {
                         Frontend
                       </h4>
                       <div className="flex flex-wrap gap-2">
-                        <Badge className="px-3 py-1.5 bg-zinc-800/70 text-white hover:bg-zinc-700/70 border-zinc-700/50">
+                        <Badge className="px-3 py-1.5 bg-[#61DAFB80] hover:bg-[#61DAFBbb] border border-[#61DAFB] text-white">
                           React
                         </Badge>
-                        <Badge className="px-3 py-1.5 bg-zinc-800/70 text-white hover:bg-zinc-700/70 border-zinc-700/50">
+                        <Badge className="px-3 py-1.5 bg-[#00000080] hover:bg-[#000000bb] border border-[#000000] text-white">
                           Next.js
                         </Badge>
-                        <Badge className="px-3 py-1.5 bg-zinc-800/70 text-white hover:bg-zinc-700/70 border-zinc-700/50">
+                        <Badge className="px-3 py-1.5 bg-[#42B88380] hover:bg-[#42B883bb] border border-[#42B883] text-white">
                           Vue.js
                         </Badge>
-                        <Badge className="px-3 py-1.5 bg-zinc-800/70 text-white hover:bg-zinc-700/70 border-zinc-700/50">
+                        <Badge className="px-3 py-1.5 bg-[#3178C680] hover:bg-[#3178C6bb] border border-[#3178C6] text-white">
                           TypeScript
                         </Badge>
-                        <Badge className="px-3 py-1.5 bg-zinc-800/70 text-white hover:bg-zinc-700/70 border-zinc-700/50">
+                        <Badge className="px-3 py-1.5 bg-[#38BDF880] hover:bg-[#38BDF8bb] border border-[#38BDF8] text-white">
                           Tailwind CSS
                         </Badge>
                       </div>
@@ -187,10 +188,10 @@ export default function Home() {
                         Database
                       </h4>
                       <div className="flex flex-wrap gap-2">
-                        <Badge className="px-3 py-1.5 bg-zinc-800/70 text-white hover:bg-zinc-700/70 border-zinc-700/50">
+                        <Badge className="px-3 py-1.5 bg-[#47A24880] hover:bg-[#47A248bb] border border-[#47A248] text-white">
                           MongoDB
                         </Badge>
-                        <Badge className="px-3 py-1.5 bg-zinc-800/70 text-white hover:bg-zinc-700/70 border-zinc-700/50">
+                        <Badge className="px-3 py-1.5 bg-[#003B5780] hover:bg-[#003B57bb] border border-[#003B57] text-white">
                           SQLite
                         </Badge>
                       </div>
@@ -201,16 +202,16 @@ export default function Home() {
                         Tools & Others
                       </h4>
                       <div className="flex flex-wrap gap-2">
-                        <Badge className="px-3 py-1.5 bg-zinc-800/70 text-white hover:bg-zinc-700/70 border-zinc-700/50">
+                        <Badge className="px-3 py-1.5 bg-[#3776AB80] hover:bg-[#3776ABbb] border border-[#3776AB] text-white">
                           Python
                         </Badge>
-                        <Badge className="px-3 py-1.5 bg-zinc-800/70 text-white hover:bg-zinc-700/70 border-zinc-700/50">
+                        <Badge className="px-3 py-1.5 bg-[#47848F80] hover:bg-[#47848Fbb] border border-[#47848F] text-white">
                           Electron
                         </Badge>
-                        <Badge className="px-3 py-1.5 bg-zinc-800/70 text-white hover:bg-zinc-700/70 border-zinc-700/50">
+                        <Badge className="px-3 py-1.5 bg-[#007ACC80] hover:bg-[#007ACCbb] border border-[#007ACC] text-white">
                           VSCode
                         </Badge>
-                        <Badge className="px-3 py-1.5 bg-zinc-800/70 text-white hover:bg-zinc-700/70 border-zinc-700/50">
+                        <Badge className="px-3 py-1.5 bg-[#1f1f1f80] hover:bg-[#1f1f1fbb] border border-[#1f1f1f] text-white">
                           Cursor
                         </Badge>
                       </div>
